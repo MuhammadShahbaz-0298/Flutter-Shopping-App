@@ -32,9 +32,9 @@ class ShoppingApp extends StatelessWidget {
           )
           )
         ),
-        // home: HomeScreen(),
+        home: HomeScreen(),
         // home: CartScreen(),
-        home: ProductDetails(),
+        // home: ProductDetails(),
     );
   }
 }

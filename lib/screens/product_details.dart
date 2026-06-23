@@ -9,7 +9,6 @@ class ProductDetails extends StatelessWidget {
       appBar: AppBar(
         title: Text("Details"),
         centerTitle: true,
-        leading: Icon(Icons.arrow_back),
       ),
       body: Column(
         children: [
