@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
 
 class ProductDetails extends StatelessWidget {
-  const ProductDetails({super.key});
+  final Map product;
+  const ProductDetails({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Details"),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: Text("Details"), centerTitle: true),
       body: Column(
         children: [
-          Text(
-            "Nike Air Force 1",
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
+          Text(product['title'], style: Theme.of(context).textTheme.titleLarge),
           Spacer(flex: 1),
-          Image.asset(height: 250, "./assets/images/shoes_2.png"),
+          Image.asset(height: 250, product['imageUrl']),
           Spacer(flex: 2),
           Container(
             decoration: BoxDecoration(
@@ -28,7 +23,7 @@ class ProductDetails extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  "\$ 100.88",
+                  "\$ ${product['price']}",
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
                 SizedBox(height: 10),
@@ -59,10 +54,11 @@ class ProductDetails extends StatelessWidget {
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color.fromRGBO(254, 206, 1, 1),
+                    foregroundColor: Colors.black,
                     minimumSize: Size(double.infinity, 55),
                   ),
-                  label: Text("Add To Cart"),
-                  icon: Icon(Icons.shopping_cart),
+                  label: Text("Add To Cart" , style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                  icon: Icon(Icons.shopping_cart,size: 24,),
                 ),
               ],
             ),

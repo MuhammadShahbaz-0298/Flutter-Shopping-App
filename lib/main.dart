@@ -15,26 +15,22 @@ class ShoppingApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // theme: ThemeData.dark(),
-        theme: ThemeData(
-          useMaterial3: true,
-          textTheme: TextTheme(
-          titleLarge: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold
-          ),
-          titleMedium: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold
-          ),
-          bodyMedium: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold
-          )
-          )
+      theme: ThemeData(
+        useMaterial3: true,
+        fontFamily: "Lato",
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromRGBO(254, 206, 1, 1),
+          primary: const Color.fromRGBO(254, 206, 1, 1),
         ),
-        home: HomeScreen(),
-        // home: CartScreen(),
-        // home: ProductDetails(),
+        textTheme: TextTheme(
+          titleLarge: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          titleMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          bodyMedium: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+      ),
+      home: HomeScreen(),
+      // home: CartScreen(),
+      // home: ProductDetails(),
     );
   }
 }

@@ -10,30 +10,29 @@ class CartScreen extends StatelessWidget {
       body: Column(
         children: [
           ListTile(
-            title: Text("Nike Air Force 1"),
-            subtitle: Text("9"),
-            leading: CircleAvatar(
-              backgroundImage: AssetImage("./assets/images/shoes_2.png"),
-            ),
-            trailing: Icon(Icons.delete, color: Colors.red),
-          ),
-           ListTile(
-            title: Text("Nike Air Force 1"),
-            subtitle: Text("9"),
-            leading: CircleAvatar(
-              backgroundImage: AssetImage("./assets/images/shoes_2.png"),
-            ),
-            trailing: Icon(Icons.delete, color: Colors.red),
-          ),
-           ListTile(
-            title: Text("Nike Air Force 1"),
-            subtitle: Text("9"),
-            leading: CircleAvatar(
-              backgroundImage: AssetImage("./assets/images/shoes_2.png"),
-            ),
-            trailing: Icon(Icons.delete, color: Colors.red),
-          ),
-           ListTile(
+            onTap: () {
+              showDialog(
+                barrierDismissible: false,
+                context: context,
+                builder: (context) => AlertDialog(
+                  content: const Text(
+                    "This Action will remove this product from cart",
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text("No", style: TextStyle(color: Colors.blue)),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text("Yes", style: TextStyle(color: Colors.red)),
+                    ),
+                  ],
+                ),
+              );
+            },
             title: Text("Nike Air Force 1"),
             subtitle: Text("9"),
             leading: CircleAvatar(
